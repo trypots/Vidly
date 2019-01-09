@@ -1,15 +1,22 @@
-﻿@model Vidly.ViewModels.CustomerViewModel
+﻿@model List<Vidly.Models.Customer>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-<ul>
-    @foreach (var customer in Model.Customers)
-    {
-        <li>@customer.Name</li>
-    }
-</ul>
-
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Customers</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@Html.ActionLink(@customer.Name, "Detail", "Customer", customer, null)</td>
+            </tr>
+        }
+    </tbody>
+</table>

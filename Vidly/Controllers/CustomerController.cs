@@ -8,25 +8,28 @@ using Vidly.ViewModels;
 
 namespace Vidly.Controllers
 {
-    public class CustomerController : Controller
-    {
+	public class CustomerController : Controller
+	{
 		// GET: Customer
 
 		[Route("customers/{index?}")]
 		public ActionResult Index()
-        {
+		{
 
-			CustomerViewModel customers = new CustomerViewModel()
-			{
-				Customers = new List<Customer>()
+			List<Customer> customers = new List<Customer>()
 					{
 						new Customer {Name = "Customer1"},
 						new Customer {Name = "Customer2"}
 
-					}
-			};
+					};
 
 			return View(customers);
-        }
+		}
+
+		[Route("Customers/Detail")]
+		public ActionResult Detail(Customer customer)
+		{
+			return View(customer);
+		}
     }
 }
