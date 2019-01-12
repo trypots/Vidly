@@ -181,10 +181,28 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901092347403_InitialModel.cs" />
+    <Compile Include="Migrations\201901092347403_InitialModel.Designer.cs">
+      <DependentUpon>201901092347403_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901100115042_AddIsSubscribedToCustomer.cs" />
+    <Compile Include="Migrations\201901100115042_AddIsSubscribedToCustomer.Designer.cs">
+      <DependentUpon>201901100115042_AddIsSubscribedToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901121521557_AddMembershipType.cs" />
+    <Compile Include="Migrations\201901121521557_AddMembershipType.Designer.cs">
+      <DependentUpon>201901121521557_AddMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901121539109_PopulateMembershipTypes.cs" />
+    <Compile Include="Migrations\201901121539109_PopulateMembershipTypes.Designer.cs">
+      <DependentUpon>201901121539109_PopulateMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\CustomerViewModel.cs" />
@@ -192,6 +210,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-Vidly-20190105112356.mdf" />
+    <Content Include="App_Data\aspnet-Vidly-20190105112356_log.ldf">
+      <DependentUpon>aspnet-Vidly-20190105112356.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -254,9 +276,7 @@
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Customer\Detail.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -269,6 +289,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201901092347403_InitialModel.resx">
+      <DependentUpon>201901092347403_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901100115042_AddIsSubscribedToCustomer.resx">
+      <DependentUpon>201901100115042_AddIsSubscribedToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901121521557_AddMembershipType.resx">
+      <DependentUpon>201901121521557_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901121539109_PopulateMembershipTypes.resx">
+      <DependentUpon>201901121539109_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
