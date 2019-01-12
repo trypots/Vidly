@@ -23,7 +23,7 @@ namespace Vidly
 					  "~/Scripts/bootstrap.js"));
 
 			bundles.Add(new StyleBundle("~/Content/css").Include(
-					 "~/Content/bootstrap_flatly.css",
+					 "~/Content/bootstrap-darkly.css",
 					  "~/Content/site.css"));
 		}
 	}
