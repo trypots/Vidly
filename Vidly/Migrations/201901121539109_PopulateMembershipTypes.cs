@@ -15,6 +15,7 @@ namespace Vidly.Migrations
 
 		public override void Down()
         {
+			Sql("delete MemberShipTypes where ID in (1,2,3,4)");
         }
     }
 }
