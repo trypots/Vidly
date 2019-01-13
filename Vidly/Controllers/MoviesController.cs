@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
+using System.Data.Entity;
 
 namespace Vidly.Controllers
 {
@@ -31,7 +32,7 @@ namespace Vidly.Controllers
 
 		private IEnumerable<Movie> GetMovies()
 		{
-			return _context.Movies.ToList();
+			return _context.Movies.Include(c => c.Genre).ToList();
 		}
 
 		[Route("movies/details/{id:int}")]
