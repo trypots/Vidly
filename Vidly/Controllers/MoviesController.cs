@@ -11,6 +11,18 @@ namespace Vidly.Controllers
     public class MoviesController : Controller
     {
 
+		private readonly ApplicationDbContext _context;
+
+		public MoviesController()
+		{
+			_context = new ApplicationDbContext();
+		}
+
+		protected override void Dispose(bool disposing)
+		{
+			_context.Dispose();
+		}
+
 		public ActionResult Index()
 		{
 			var movies = GetMovies();
@@ -19,12 +31,18 @@ namespace Vidly.Controllers
 
 		private IEnumerable<Movie> GetMovies()
 		{
-			return new List<Movie>
-			{
-				new Movie { Id = 1, Name = "Shrek" },
-				new Movie { Id = 2, Name = "Wall-e" }
-			};
+			return _context.Movies.ToList();
 		}
+
+		[Route("movies/details/{id:int}")]
+		public ActionResult Details(int id)
+		{
+			var movie = GetMovies().SingleOrDefault(m => m.Id == id);
+
+			return View(movie);
+
+		}
+
 
 		public ActionResult Random()
 		{
