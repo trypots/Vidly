@@ -25,7 +25,7 @@ namespace Vidly.Controllers
 		}
 
 		// GET: Customer
-		[Route("customers/{index?}")]
+		[Route("customers/index")]
 		public ActionResult Index()
 		{
 
