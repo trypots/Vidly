@@ -25,12 +25,14 @@ namespace Vidly.Controllers
 		}
 
 		// GET: Customer
+		[Route("customers/{index?}")]
 		public ActionResult Index()
 		{
 
 			var customers = _context.Customers.Include(c => c.MembershipType).ToList();
 
 			return View(customers.ToList());
+
 		}
 
 		//[Route("customers/details/{id}")]
@@ -72,8 +74,7 @@ namespace Vidly.Controllers
 				customerInDB.IsSubscribedToNewsletter = customer.IsSubscribedToNewsletter;
 			}
 			_context.SaveChanges();
-			////return RedirectToAction("Index", "Customers");
-			return Content("saved");
+			return RedirectToAction("Index", "Customers");
 		}
 
 		public ActionResult Edit(int id)
